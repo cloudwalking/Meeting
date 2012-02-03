@@ -1,10 +1,23 @@
-# Basic Sinatra App
+# Yummy Meeting
+page to enter meeting info. 
 
-This is a basic sinatra app, ready for heroku, or local deployment. It uses sequel and less to deal with the db and css.
+meeting has:  
+meta (name, date, attendees, cc's)  
+problem (why are we having this meeting? what needs to be decided? this is required)  
+decision (resolution to this meeting. what was decided. this is required)  
+action items (these are to fulfill the decision, each has an owner)  
+notes  
+follow-up date  
 
-If you are using heroku, try creating your app with `heroku create APP_NAME -s cedar`.
+meeting is created after the meeting is over. a summary is mailed to all participants & cc's. problem, decision, and action items are highlighted.
 
-To run your site locally, run `rackup`.
+## Running
+
+First time only, run rake db:migrate
+
+To run, `rackup` or `shotgun`.
+
+For Heroku, create app with `heroku create APP_NAME -s cedar`.
 
 ## Database Stuff
 

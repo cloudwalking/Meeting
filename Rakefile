@@ -26,8 +26,8 @@ namespace :db do
   desc "Delete the database"
   task :erase do
     DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://db/data.db')
-    DB.drop_table(:sites)
-    DB.drop_table(:commits)
+    DB.drop_table(:meetings)
+    DB.drop_table(:actions)
     DB.drop_table(:schema_info)
   end
 
@@ -35,10 +35,10 @@ namespace :db do
   task :dump do
     DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://db/data.db')
 
-    puts "Sites Schema"
-    p DB.schema :sites
+    puts "Meetings Schema"
+    p DB.schema :meetings
 
-    puts "Commits Schema"
-    p DB.schema :commits
+    puts "Actions Schema"
+    p DB.schema :actions
   end
 end
